@@ -6,12 +6,10 @@ const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const contactRouter = require('./routes/contact')
-const checkoutRouter = require('./routes/checkout');
-const cartRouter = require('./routes/cart');
-const productGridRouter = require('./routes/productGrid');
-const productDetailRouter = require('./routes/productDetail');
-const wishlistRouter = require('./routes/wishlist');
+
+const productRouter = require('./routes/product');
+
+
 
 const app = express();
 
@@ -27,12 +25,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/contact', contactRouter);
-app.use('/checkout', checkoutRouter);
-app.use('/cart', cartRouter);
-app.use('/productGrid', productGridRouter);
-app.use('/productDetail', productDetailRouter);
-app.use('/wishlist', wishlistRouter);
+app.use('/product', productRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
