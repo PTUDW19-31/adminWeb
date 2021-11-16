@@ -11,11 +11,11 @@ router.get('/login.html', function(req, res, next) {
 });
 
 router.get('/itemList', function(req, res, next) {
-  res.render('itemList', { title: 'Asbab - Item' });
+  res.render('itemList', { title: 'Asbab - Item List' });
 });
 
 router.get('/itemEditor', function(req, res, next) {
-  res.render('itemEditor', { title: 'Asbab - Item' });
+  res.render('itemEditor', { title: 'Asbab - Item Editor' });
 });
 
 router.get('/charts.html', function(req, res, next) {
