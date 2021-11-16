@@ -62,98 +62,158 @@
 			</div>
 		</div><!-- /.container-fluid -->
 	</nav>
-<div class="title-block">
-	<h3 class="title">
-		Add new item <span class="sparkline bar" data-type="bar"></span>
-	</h3>
-</div>
-
-
-<form name="item">
-	<div class="card card-block">
-
-		<div class="form-group row">
-			<label class="col-sm-2 form-control-label text-xs-right">
-				Name:
-			</label>
-			<div class="col-sm-10">
-				<input type="text" class="form-control boxed" placeholder="">
+	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+		<div class="profile-sidebar">
+			<div class="profile-userpic">
+				<img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="">
 			</div>
+			<div class="profile-usertitle">
+				<div class="profile-usertitle-name">Username</div>
+				<div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="divider"></div>
+		<form role="search">
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="Search">
+			</div>
+		</form>
+		<ul class="nav menu">
+			<li><a href="/"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
+			<li><a href="charts.html"><em class="fa fa-bar-chart">&nbsp;</em> Charts</a></li>
+			<li class="parent active"><a data-toggle="collapse" href="#sub-item-1">
+				<em class="fa fa-navicon">&nbsp;</em> Item Manager<span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
+				</a>
+				<ul class="children collapse" id="sub-item-1">
+					<li><a class="" href="itemList">
+						<span class="fa fa-arrow-right">&nbsp;</span> Item list
+					</a></li>
+					<li><a class="" href="itemEditor">
+						<span class="fa fa-arrow-right">&nbsp;</span> Item editor
+					</a></li>
+					
+				</ul>
+			</li>
+			
+			<li><a href="login.html"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
+		</ul>
+	</div><!--/.sidebar-->
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+	<div class="row">
+        <ol class="breadcrumb">
+            <li><a href="#">
+                <em class="fa fa-home"></em>
+            </a></li>
+            <li class="active">Item Editor</li>
+        </ol>
+    </div><!--/.row-->
+    
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Item Editor</h1>
+        </div>
+    </div><!--/.row-->
+	<div class="panel panel-container">
+		<div class="title-block">
+			<h3 class="title">
+				Add new item <span class="sparkline bar" data-type="bar"></span>
+			</h3>
 		</div>
 
-		<div class="form-group row">
-			<label class="col-sm-2 form-control-label text-xs-right">
-				Content:
-			</label>
-			<div class="col-sm-10">
 
-				{{#editor}}
-					Hello World
-				{{/editor}}
+		<form name="item">
+			<div class="card card-block">
 
-			</div>
-		</div>
+				<div class="form-group row">
+					<label class="col-sm-2 form-control-label text-xs-right">
+						Name:
+					</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control boxed" placeholder="">
+					</div>
+				</div>
 
-		<div class="form-group row">
-			<label class="col-sm-2 form-control-label text-xs-right">
-				Category:
-			</label>
-			<div class="col-sm-10">
-				<select class="c-select form-control boxed">
-					<option selected>Select Category</option>
-					<option value="1">One</option>
-					<option value="2">Two</option>
-					<option value="3">Three</option>
-				</select>
-			</div>
-		</div>
+				<div class="form-group row">
+					<label class="col-sm-2 form-control-label text-xs-right">
+						Content:
+					</label>
+					<div class="col-sm-10">
 
-		<div class="form-group row">
-			<label class="col-sm-2 form-control-label text-xs-right">
-				Images:
-			</label>
-			<div class="col-sm-10">
-				<div class="images-container">
-					{{#each images}}
-						<div class="image-container">
-							<div class="controls">
-								<a href="" class="control-btn move">
-									<i class="fa fa-arrows"></i>
-								</a><!--
-								--><a href="" class="control-btn star">
-									<i class="fa"></i>
-								</a><!--
-								--><a href="#" class="control-btn remove" data-toggle="modal" data-target="#confirm-modal">
-									<i class="fa fa-trash-o"></i>
-								</a>
-							</div>
+						{{#editor}}
+							Hello World
+						{{/editor}}
 
-							{{!-- {{this}} --}}
-							{{!-- {{../images.thumbnails.[this]}} --}}
+					</div>
+				</div>
 
-							<div class="image" style="background-image:url('{{this.url}}')"></div>
+				<div class="form-group row">
+					<label class="col-sm-2 form-control-label text-xs-right">
+						Category:
+					</label>
+					<div class="col-sm-10">
+						<select class="c-select form-control boxed">
+							<option selected>Select Category</option>
+							<option value="1">One</option>
+							<option value="2">Two</option>
+							<option value="3">Three</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label class="col-sm-2 form-control-label text-xs-right">
+						Images:
+					</label>
+					<div class="col-sm-10">
+						<div class="images-container">
+							{{#each images}}
+								<div class="image-container">
+									<div class="controls">
+										<a href="" class="control-btn move">
+											<i class="fa fa-arrows"></i>
+										</a><!--
+										--><a href="" class="control-btn star">
+											<i class="fa"></i>
+										</a><!--
+										--><a href="#" class="control-btn remove" data-toggle="modal" data-target="#confirm-modal">
+											<i class="fa fa-trash-o"></i>
+										</a>
+									</div>
+
+									{{!-- {{this}} --}}
+									{{!-- {{../images.thumbnails.[this]}} --}}
+
+									<div class="image" style="background-image:url('{{this.url}}')"></div>
+								</div>
+							{{/each}}
+							<a href="#" class="add-image" data-toggle="modal" data-target="#modal-media">
+								<div class="image-container new">
+									<div class="image" >
+										<i class="fa fa-plus"></i>
+									</div>
+								</div>
+							</a>
 						</div>
-					{{/each}}
-					<a href="#" class="add-image" data-toggle="modal" data-target="#modal-media">
-						<div class="image-container new">
-							<div class="image" >
-								<i class="fa fa-plus"></i>
-							</div>
-						</div>
-					</a>
+					</div>
+				</div>
+
+
+				<div class="form-group row">
+					<div class="col-sm-10 col-sm-offset-2">
+						<button type="submit" class="btn btn-primary">
+							Submit
+						</button>
+					</div>
 				</div>
 			</div>
-		</div>
+		</form>
+	</div>
+</div>
+	
+	<script src="js/jquery-1.11.1.min.js"></script>
 
-
-		<div class="form-group row">
-			<div class="col-sm-10 col-sm-offset-2">
-				<button type="submit" class="btn btn-primary">
-					Submit
-				</button>
-			</div>
-		</div>
-		<script src="js/jquery-1.11.1.min.js"></script>
+	<script scr="js/item-editor.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/chart.min.js"></script>
 	<script src="js/chart-data.js"></script>

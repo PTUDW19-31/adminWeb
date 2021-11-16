@@ -22,8 +22,5 @@ router.get('/charts.html', function(req, res, next) {
   res.render('charts', { title: 'Asbab - Item' });
 });
 
-router.get('/elements.html', function(req, res, next) {
-  res.render('elements', { title: 'Asbab - Item' });
-});
 
 module.exports = router;
