@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Asbab' });
+  res.render('index', { title: 'Asbab - Dashboard' });
 });
 
 router.get('/login.html', function(req, res, next) {
@@ -19,7 +19,7 @@ router.get('/itemEditor', function(req, res, next) {
 });
 
 router.get('/charts.html', function(req, res, next) {
-  res.render('charts', { title: 'Asbab - Item' });
+  res.render('charts', { title: 'Asbab - Charts' });
 });
 
 
