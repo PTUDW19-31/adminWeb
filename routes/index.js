@@ -22,5 +22,4 @@ router.get('/charts.html', function(req, res, next) {
   res.render('charts', { title: 'Asbab - Charts' });
 });
 
-
 module.exports = router;
