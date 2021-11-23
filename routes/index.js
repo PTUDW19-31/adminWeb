@@ -10,9 +10,9 @@ router.get('/login.html', function(req, res, next) {
   res.render('login', { title: 'Asbab - Login' });
 });
 
-router.get('/itemList', function(req, res, next) {
-  res.render('itemList', { title: 'Asbab - Item List' });
-});
+// router.get('/itemList', function(req, res, next) {
+//   res.render('itemList', { title: 'Asbab - Item List' });
+// });
 
 router.get('/itemEditor', function(req, res, next) {
   res.render('itemEditor', { title: 'Asbab - Item Editor' });
